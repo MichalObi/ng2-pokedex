@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['ng2-pokedex.component.css']
 })
 export class Ng2PokedexAppComponent {
-  title = 'ng2-pokedex works!';
 }
