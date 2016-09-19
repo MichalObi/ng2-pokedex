@@ -14,9 +14,4 @@ describe('App: Ng2Pokedex', () => {
       inject([Ng2PokedexAppComponent], (app: Ng2PokedexAppComponent) => {
     expect(app).toBeTruthy();
   }));
-
-  it('should have as title \'ng2-pokedex works!\'',
-      inject([Ng2PokedexAppComponent], (app: Ng2PokedexAppComponent) => {
-    expect(app.title).toEqual('ng2-pokedex works!');
-  }));
 });
