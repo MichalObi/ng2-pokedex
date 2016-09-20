@@ -9,25 +9,25 @@ import {
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { PokemonListComponent } from './pokemon-list.component';
+import { PokemonFooterComponent } from './pokemon-footer.component';
 
-describe('Component: PokemonList', () => {
+describe('Component: PokemonFooter', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [PokemonListComponent]);
+  beforeEachProviders(() => [PokemonFooterComponent]);
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder) {
     builder = tcb;
   }));
 
-  it('should inject the component', inject([PokemonListComponent],
-      (component: PokemonListComponent) => {
+  it('should inject the component', inject([PokemonFooterComponent],
+      (component: PokemonFooterComponent) => {
     expect(component).toBeTruthy();
   }));
 
   it('should create the component', inject([], () => {
-    return builder.createAsync(PokemonListComponentTestController)
+    return builder.createAsync(PokemonFooterComponentTestController)
       .then((fixture: ComponentFixture<any>) => {
-        let query = fixture.debugElement.query(By.directive(PokemonListComponent));
+        let query = fixture.debugElement.query(By.directive(PokemonFooterComponent));
         expect(query).toBeTruthy();
         expect(query.componentInstance).toBeTruthy();
       });
@@ -37,9 +37,9 @@ describe('Component: PokemonList', () => {
 @Component({
   selector: 'test',
   template: `
-    <pokemon-list></pokemon-list>
+    <pokemon-footer></pokemon-footer>
   `,
-  directives: [PokemonListComponent]
+  directives: [PokemonFooterComponent]
 })
-class PokemonListComponentTestController {
+class PokemonFooterComponentTestController {
 }

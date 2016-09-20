@@ -30,6 +30,8 @@ const barrels: string[] = [
   'app',
   'app/shared',
   'app/pokemon-list',
+  'app/pokemon-header',
+  'app/pokemon-footer',
   /** @cli-barrel */
 ];
 
