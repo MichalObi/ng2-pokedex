@@ -4,7 +4,6 @@ import { PokemonHeaderComponent } from './pokemon-header/pokemon-header.componen
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonFooterComponent } from './pokemon-footer/pokemon-footer.component'
 
-
 @Component({
   moduleId: module.id,
   selector: 'ng2-pokedex-app',
