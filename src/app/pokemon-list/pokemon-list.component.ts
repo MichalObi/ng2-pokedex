@@ -12,7 +12,7 @@ import {SearchPipe} from '../search.pipe';
 })
 export class PokemonListComponent implements OnInit {
 
-  @Input() searchPokemon;
+  @Input() pokeSearch;
   pokemonsList = [];
 
   constructor(private _pokemonListService:PokemonListService) {}
