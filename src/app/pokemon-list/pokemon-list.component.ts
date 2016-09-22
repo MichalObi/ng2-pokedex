@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {PokemonListService} from './service/pokemon-list.service'
+import {SearchPipe} from '../search.pipe';
 
 @Component({
   moduleId: module.id,
   selector: 'pokemon-list',
   templateUrl: 'pokemon-list.component.html',
   styleUrls: ['pokemon-list.component.css'],
-  providers: [PokemonListService]
+  providers: [PokemonListService],
+  pipes: [SearchPipe]
 })
 export class PokemonListComponent implements OnInit {
 
-  constructor(private _pokemonListService:PokemonListService) {}
-
+  @Input() searchPokemon;
   pokemonsList = [];
 
+  constructor(private _pokemonListService:PokemonListService) {}
 
   ngOnInit() {
     this.getPokemonList();

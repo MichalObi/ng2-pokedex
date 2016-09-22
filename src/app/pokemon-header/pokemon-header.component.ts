@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -10,8 +10,10 @@ export class PokemonHeaderComponent implements OnInit {
 
   constructor() {}
 
+  @Output() update = new EventEmitter();
+
   ngOnInit() {
-    console.log('ok');
+    this.update.emit('');
   }
 
 }
