@@ -1,0 +1,26 @@
+.pokemon-list {
+  padding: 70px 0 80px 0;
+}
+
+.pokemon-list__item {
+  position: relative;
+  margin: 30px;
+  width: 220px;
+  float: left;
+}
+
+.full-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.card-block {
+  text-align: center;
+}
+
+.card-title {
+  text-transform: capitalize;
+}

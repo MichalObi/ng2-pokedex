@@ -8,10 +8,10 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class PokemonListService {
 
-  constructor(private http : Http) {
+  constructor(private http:Http) {
   }
 
-  private pokeApiUrl = 'http://pokeapi.co/api/v2/?limit=20';
+  private pokeApiUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151';
 
   getAllPokemons() : Observable<any[]> {
     return this.http.get(this.pokeApiUrl)

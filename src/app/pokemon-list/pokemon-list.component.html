@@ -1,3 +1,11 @@
-<p>
-  pokemon-list works!
-</p>
+<div class="container">
+  <div class="row pokemon-list">
+    <div *ngFor="let pokemon of pokemonsList; let i = index;" class="card pokemon-list__item">
+      <div class="card-block">
+        <img src="#" alt="{{pokemon.name}}">
+        <h4 class="card-title">{{pokemon.name}}</h4>
+      </div>
+      <a href="#" class="full-link"></a>
+    </div>
+  </div>
+</div>
