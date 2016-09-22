@@ -14,6 +14,7 @@ export class PokemonListComponent implements OnInit {
 
   pokemonsList = [];
 
+
   ngOnInit() {
     this.getPokemonList();
   }
@@ -22,7 +23,14 @@ export class PokemonListComponent implements OnInit {
     this._pokemonListService.getAllPokemons()
     .subscribe((pokemonsList:any) => {
       this.pokemonsList = pokemonsList.results;
-      console.log(this.pokemonsList);
+      this.pokemonsList.forEach(this.addPokemonImage);
     });
+  }
+
+  addPokemonImage(pokemon, i){
+    let baseUrl = location.href.replace('/#', '/');
+    let assetsPath = 'app/assets/pokemon-image/';
+    let pokemonImageUrl = baseUrl + assetsPath;
+    pokemon.imageUrl = pokemonImageUrl + (i + 1) + '.png';
   }
 }
