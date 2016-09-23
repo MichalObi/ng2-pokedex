@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row pokemon-list">
-    <div *ngFor="let pokemon of pokemonsList | search : pokeSearch; let i = index;" class="card pokemon-item">
+    <div *ngFor="let pokemon of pokemonsList" class="card pokemon-item">
       <div class="pokemon-item__image" [ngStyle]="{'background-image': 'url(' + pokemon.imageUrl + ')'}"></div>
       <div class="card-block">
         <h4 class="card-title">{{pokemon.name}}</h4>
       </div>
-      <a href="#" class="full-link"></a>
+      <a [routerLink]="['/pokemon-details/:id']" class="full-link"></a>
     </div>
   </div>
 </div>

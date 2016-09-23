@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {PokemonListService} from './service/pokemon-list.service'
 import {SearchPipe} from '../search.pipe';
+import { ROUTER_DIRECTIVES, Router, Routes } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -8,7 +9,8 @@ import {SearchPipe} from '../search.pipe';
   templateUrl: 'pokemon-list.component.html',
   styleUrls: ['pokemon-list.component.css'],
   providers: [PokemonListService],
-  pipes: [SearchPipe]
+  pipes: [SearchPipe],
+  directives: [ROUTER_DIRECTIVES]
 })
 export class PokemonListComponent implements OnInit {
 

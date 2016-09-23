@@ -33,6 +33,7 @@ const barrels: string[] = [
   'app/pokemon-list',
   'app/pokemon-header',
   'app/pokemon-footer',
+  'app/pokemon-details',
   /** @cli-barrel */
 ];
 

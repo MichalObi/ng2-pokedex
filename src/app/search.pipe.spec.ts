@@ -5,12 +5,12 @@ import {
   inject,
   beforeEachProviders
 } from '@angular/core/testing';
-import { Search } from './search.pipe';
+import { SearchPipe } from './search.pipe';
 
 describe('SearchPipe Pipe', () => {
-  beforeEachProviders(() => [Search]);
+  beforeEachProviders(() => [SearchPipe]);
 
-  it('should transform the input', inject([Search], (pipe: Search) => {
+  it('should transform the input', inject([SearchPipe], (pipe: SearchPipe) => {
       expect(pipe.transform(true)).toBe(null);
   }));
 });
