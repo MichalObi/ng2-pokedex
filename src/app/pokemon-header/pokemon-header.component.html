@@ -2,7 +2,7 @@
   <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
     <a class="navbar-brand" href="#">Ng2-Pokedex</a>
     <form class="form-inline pull-xs-right">
-      <input #input class="form-control" type="text" placeholder="Search" (input)="update.emit(input.value)">
+      <input #input class="form-control" type="text" placeholder="Search" (input)="setPokeSearch(input.value)">
     </form>
   </nav>
 </header>

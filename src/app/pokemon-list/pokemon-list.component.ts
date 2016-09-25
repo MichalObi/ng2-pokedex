@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {PokemonListService} from './service/pokemon-list.service'
+import { SharedService } from '../../app/shared'
 import {SearchPipe} from '../search.pipe';
 import { ROUTER_DIRECTIVES, Router, Routes } from '@angular/router';
 
@@ -14,10 +15,16 @@ import { ROUTER_DIRECTIVES, Router, Routes } from '@angular/router';
 })
 export class PokemonListComponent implements OnInit {
 
-  @Input() pokeSearch;
+  pokeSearch = '';
   pokemonsList = [];
 
-  constructor(private _pokemonListService:PokemonListService) {}
+  constructor(private _pokemonListService:PokemonListService, public _sharedService: SharedService) {
+    this._sharedService.searchTextStream$.subscribe(
+          search => {
+              this.pokeSearch = search;
+          }
+      )
+  }
 
   ngOnInit() {
     this.getPokemonList();
