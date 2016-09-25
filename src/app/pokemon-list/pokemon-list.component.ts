@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {PokemonListService} from './service/pokemon-list.service'
 import { SharedService } from '../../app/shared'
-import {SearchPipe} from '../search.pipe';
+import {SearchPipe} from '../../app/shared';
 import { ROUTER_DIRECTIVES, Router, Routes } from '@angular/router';
 
 @Component({
@@ -20,9 +20,7 @@ export class PokemonListComponent implements OnInit {
 
   constructor(private _pokemonListService:PokemonListService, public _sharedService: SharedService) {
     this._sharedService.searchTextStream$.subscribe(
-          search => {
-              this.pokeSearch = search;
-          }
+          search => { this.pokeSearch = search; }
       )
   }
 
