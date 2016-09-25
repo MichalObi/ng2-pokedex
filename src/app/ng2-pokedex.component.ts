@@ -15,7 +15,7 @@ import { PokemonFooterComponent } from './pokemon-footer/pokemon-footer.componen
 })
 @Routes([
   {path: '', component: PokemonListComponent},
-  {path: "/pokemon-details/:id", component: PokemonDetailsComponent}
+  {path: "/pokemon/:id", component: PokemonDetailsComponent}
 ])
 export class Ng2PokedexAppComponent {
   constructor(public router: Router){}

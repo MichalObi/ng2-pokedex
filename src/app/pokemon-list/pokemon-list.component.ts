@@ -29,11 +29,11 @@ export class PokemonListComponent implements OnInit {
   }
 
   getPokemonList() {
-    this._pokemonListService.getAllPokemons()
-    .subscribe((pokemonsList:any) => {
-      this.pokemonsList = pokemonsList.results;
-      this.pokemonsList.forEach(this.addPokemonImage);
-    });
+      this._pokemonListService.getAllPokemons()
+      .subscribe((pokemonsList:any) => {
+        this.pokemonsList = pokemonsList.results;
+        this.pokemonsList.forEach(this.addPokemonImage);
+      });
   }
 
   addPokemonImage(pokemon, i){
