@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from '../../app/shared'
+import { Location } from '@angular/common';
+import { SharedService } from '../../app/shared';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -9,7 +11,13 @@ import { SharedService } from '../../app/shared'
 })
 export class PokemonHeaderComponent implements OnInit {
 
-  constructor(public _sharedService: SharedService) {}
+  hidden:boolean = false;
+
+  constructor(private _router: Router, private _location:Location, public _sharedService: SharedService) {
+     this._router.changes.subscribe((val) => {
+      this.isHidden();
+     });
+  }
 
   ngOnInit() {
     this._sharedService.insertData('');
@@ -17,6 +25,13 @@ export class PokemonHeaderComponent implements OnInit {
 
   setPokeSearch(search) {
     this._sharedService.insertData(search);
+  }
+
+  isHidden() {
+    let list = [''],
+        route = this._location.path();
+        this.hidden = list.indexOf(route) > -1;
+        console.log(this.hidden);
   }
 
 }

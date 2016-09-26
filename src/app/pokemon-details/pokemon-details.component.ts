@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouteSegment } from '@angular/router';
-import {PokemonDetailsService} from './service/pokemon-details.service'
+import { RouteSegment } from '@angular/router';
+import {PokemonDetailsService} from './service/pokemon-details.service';
 
 @Component({
   moduleId: module.id,
