@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import {PokemonListService} from './service/pokemon-list.service'
-import { SharedService } from '../../app/shared'
+import {PokemonListService} from './service/pokemon-list.service';
+import { SharedService } from '../../app/shared';
 import {SearchPipe} from '../../app/shared';
 import { ROUTER_DIRECTIVES, Router, Routes } from '@angular/router';
 
@@ -18,7 +18,8 @@ export class PokemonListComponent implements OnInit {
   pokeSearch = '';
   pokemonsList = [];
 
-  constructor(private _pokemonListService:PokemonListService, public _sharedService: SharedService) {
+  constructor(private _pokemonListService:PokemonListService,
+              public _sharedService: SharedService) {
     this._sharedService.searchTextStream$.subscribe(
           search => { this.pokeSearch = search; }
       )
@@ -32,14 +33,7 @@ export class PokemonListComponent implements OnInit {
       this._pokemonListService.getAllPokemons()
       .subscribe((pokemonsList:any) => {
         this.pokemonsList = pokemonsList.results;
-        this.pokemonsList.forEach(this.addPokemonImage);
+        this.pokemonsList.forEach(this._sharedService.addPokemonImage);
       });
-  }
-
-  addPokemonImage(pokemon, i){
-    let baseUrl = location.href.replace('/#', '/');
-    let assetsPath = 'app/assets/pokemon-image/';
-    let pokemonImageUrl = baseUrl + assetsPath;
-    pokemon.imageUrl = pokemonImageUrl + (i + 1) + '.png';
   }
 }

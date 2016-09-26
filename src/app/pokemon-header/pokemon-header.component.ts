@@ -31,7 +31,6 @@ export class PokemonHeaderComponent implements OnInit {
     let list = [''],
         route = this._location.path();
         this.hidden = list.indexOf(route) > -1;
-        console.log(this.hidden);
   }
 
 }
