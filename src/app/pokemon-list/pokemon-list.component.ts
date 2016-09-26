@@ -1,7 +1,7 @@
-import { Component, OnInit} from '@angular/core';
-import {PokemonListService} from './service/pokemon-list.service';
+import { Component, OnInit } from '@angular/core';
+import { PokemonListService } from './service/pokemon-list.service';
 import { SharedService } from '../../app/shared';
-import {SearchPipe} from '../../app/shared';
+import { SearchPipe } from '../../app/shared';
 import { ROUTER_DIRECTIVES, Router, Routes } from '@angular/router';
 
 @Component({

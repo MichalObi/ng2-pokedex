@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouteSegment } from '@angular/router';
 import { SharedService } from '../../app/shared';
-import {PokemonDetailsService} from './service/pokemon-details.service';
+import { PokemonDetailsService } from './service/pokemon-details.service';
 
 @Component({
   moduleId: module.id,

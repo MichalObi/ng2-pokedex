@@ -1,0 +1,11 @@
+.pokemon-details {
+  padding: 70px;;
+}
+
+.pokemon-details__image {
+  height: 250px;
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
