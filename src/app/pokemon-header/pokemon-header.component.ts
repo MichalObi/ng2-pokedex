@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../app/shared'
 
 @Component({
@@ -11,15 +11,11 @@ export class PokemonHeaderComponent implements OnInit {
 
   constructor(public _sharedService: SharedService) {}
 
-  @Output() update = new EventEmitter();
-
   ngOnInit() {
-    this.update.emit('')
     this._sharedService.insertData('');
   }
 
   setPokeSearch(search) {
-    this.update.emit(search);
     this._sharedService.insertData(search);
   }
 
