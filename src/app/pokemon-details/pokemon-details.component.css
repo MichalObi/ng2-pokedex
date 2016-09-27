@@ -2,10 +2,22 @@
   padding: 70px;;
 }
 
-.pokemon-details__image {
-  height: 250px;
-  width: 100%;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+.pokemon-details__content {
+  margin-top: 30px;
+}
+
+.pokemon-details__content h1 {
+  text-transform: capitalize;
+}
+
+.pokemon-details__content h3 span:before {
+  content: ', ';
+}
+
+.pokemon-details__content h3 span:first-child::before {
+  content: '';
+}
+
+.pokemon-parameter {
+  margin: 20px 0;
 }

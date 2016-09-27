@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { RouteSegment } from '@angular/router';
 import { SharedService } from '../../app/shared';
 import { PokemonDetailsService } from './service/pokemon-details.service';
+import { KeyValues} from '../../app/shared';
 
 @Component({
   moduleId: module.id,
   selector: 'app-pokemon-details',
   templateUrl: 'pokemon-details.component.html',
   styleUrls: ['pokemon-details.component.css'],
-  providers: [PokemonDetailsService]
+  providers: [PokemonDetailsService],
+  pipes: [KeyValues]
 })
 export class PokemonDetailsComponent implements OnInit {
 

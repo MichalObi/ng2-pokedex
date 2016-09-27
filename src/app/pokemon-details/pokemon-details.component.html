@@ -2,11 +2,16 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <!-- <div class="pokemon-details__image" [ngStyle]="{'background-image': 'url(' + pokemonDetails.imageUrl  + ')'}"></div> -->
+        <img src="{{ pokemonDetails?.imageUrl }}" alt="{{ pokemonDetails.name }}">
       </div>
-      <div class="col-md-8">
+      <div class="col-md-6 push-md-2">
         <div class="pokemon-details__content">
-          <h1>{{pokemonDetails.name}}</h1>
+          <h1>{{ pokemonDetails.name }}</h1>
+          <h3>Types: <span *ngFor="let pokemonType of pokemonDetails.types | keyValues">{{ pokemonType.value.type.name }}</span></h3>
+          <div class="pokemon-parameter">
+            <h5>Weight: {{ pokemonDetails.weight }} kg</h5>
+            <h5>Height: {{ pokemonDetails.height*10 }} cm</h5>
+          </div>
         </div>
       </div>
     </div>
